@@ -1,10 +1,11 @@
 # APPLE DATA EXPLORATION
 
 ## Project Overview
--  Data exploation
+- Data exploration details go here
 
-## Objetive
+## Objective
+- Project objectives and goals explained here
 
 ## Conclusion
-
+- Summary of conclusions drawn from the exploration
 
