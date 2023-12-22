@@ -76,20 +76,21 @@ group by LengthofDescription
 order by averageuserrating desc;
 
 -- Check the top-rated apps for each genre
-SELECT
-	   prime_genre,
-       track_name,
-       user_rating
-FROM ( 
-  	   SELECT
+with t1 as (SELECT
 	   prime_genre,
        track_name,
        user_rating,
        RANK () OVER(PARTITION BY prime_genre order by user_rating desc, rating_count_tot DESC) AS rank
        from 
-       AppleStore)  as a 
+       AppleStore)
+
+SELECT
+	   prime_genre,
+       track_name,
+       user_rating
+FROM t1
 where 
-a.rank = 1; 
+t1.rank = 1; 
 
 
 
